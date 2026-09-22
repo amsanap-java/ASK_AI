@@ -436,29 +436,6 @@ Transforms the incoming query before retrieval to improve compatibility with the
 
 Sanitizes retrieved context before it reaches the LLM.
 
----
-
-## 🎯 Interview Talking Points
-
-This project can be explained in an interview as:
-
-> **“I built a Spring AI based GenAI application demonstrating enterprise AI patterns such as RAG, vector similarity search, persistent chat memory, tool calling, web-search augmentation, prompt templates, structured output and token-usage auditing. Qdrant is used as the vector store, Tavily provides external web retrieval, and Spring AI Advisors are used for memory, logging, retrieval and usage auditing. I also added PII masking in the RAG pipeline so retrieved context can be sanitized before being sent to the LLM.”**
-
-### If asked: Why RAG?
-
-RAG allows the application to retrieve relevant enterprise knowledge at runtime instead of depending only on the model's pre-trained knowledge. This is useful for frequently changing or private domain information.
-
-### If asked: Why Vector Database?
-
-A vector database stores embeddings and enables similarity-based retrieval. Instead of matching only exact keywords, semantically related content can be retrieved.
-
-### If asked: What is Tool Calling?
-
-The LLM decides that a tool is required, Spring AI invokes the corresponding Java method, and the tool result is returned to the model to generate the final response.
-
-### If asked: How do you monitor AI usage?
-
-The custom `TokenUsageAuditAdvisor` reads token usage from the model response metadata and logs prompt, completion and total token counts. This can later be integrated with metrics and distributed tracing.
 
 ---
 
